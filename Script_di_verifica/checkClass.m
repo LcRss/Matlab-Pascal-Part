@@ -1,13 +1,15 @@
 % dato un dataset controlla se mancano alcune classi all'interno
 
 path_res='G:\Data_correct\segmentation_part_gray\new_dataset_107\data_part_107part_val/';
-fileID = fopen('C:\Users\lucab\Desktop\Script_Matlab_ordinati\File_txt_lista_immagini_per_dataset_e_statistiche_dal_sito/val.txt');
+fileID = fopen('C:\Users\lucab\Desktop\Script_Matlab_ordinati\Matlab_clean_code\File_txt_lista_immagini_per_dataset_e_statistiche_dal_sito/val.txt');
 img_gt_list = textscan(fileID,'%s');
 test_list = img_gt_list{1,1};
 fclose(fileID);
 
 all_part = []
 diningtable = 0;
+handlebar = 0;
+saddle = 0;
 
 for i = 1: length(test_list)
         
@@ -18,6 +20,14 @@ for i = 1: length(test_list)
         
         if ismember(54,part)
             diningtable = diningtable+ 1;
+        end
+        
+        if ismember(74,part)
+            handlebar = handlebar+ 1;
+        end
+        
+        if ismember(75,part)
+            saddle = saddle + 1;
         end
         
         all_part = cat(1,all_part, part);

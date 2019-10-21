@@ -1,8 +1,14 @@
 % ricordarsi di aggiungere una riga alla tabella così non si perdono i
 % valori del background
 
-path2 = "G:\backup_data_31_jul_19\Test_deeplab_parts_2080_adj_loss\Test_incremental_softmax_adj_custom_adj_loss_l1_lambda_10.0_kern_init_he_uniform_epochs_14__class_108_lr_0.001_batch_2_size_321/results.xlsx";
-path1 = "G:\Final_test\baseline\Test_baseline_14_batch_2_Train_class_baseline_108_lr_0.001_batch_2_size_321/results.xlsx";
+% path2 = "G:\backup_data_31_jul_19\Test_deeplab_parts_2080_adj_loss\Test_incremental_softmax_adj_custom_adj_loss_l1_lambda_10.0_kern_init_he_uniform_epochs_14__class_108_lr_0.001_batch_2_size_321/results.xlsx";
+% path1 = "G:\Final_test\baseline\Test_baseline_14_batch_2_Train_class_baseline_108_lr_0.001_batch_2_size_321/results.xlsx";
+
+%softmax
+path2 = "C:\Users\lucab\Desktop\adj.xlsx";
+%baseline
+path1 = "C:\Users\lucab\Desktop\baseline.xlsx";
+
 
 name_parts = load("listNamePartsNoUnderScore.mat");
 name_parts = name_parts.name_parts;
@@ -46,8 +52,8 @@ a = get(gca,'xticklabel');
 set(gca,'xticklabel',a,'fontsize',12);
 set(gca, 'XTickLabelRotation', 90);
 
-legend('baseline','softmax');
-title('Baseline-Softmax');
+legend('baseline','adjacency loss');
+title('Baseline-Adjacency loss');
 
 subplot(2,1,2);
 b2 = bar(x2,y2,1, 'EdgeColor',[1 1 1]);
